@@ -10,12 +10,21 @@ export class User extends Model<User> {
   @Column(DataType.UUID)
   id!: string
 
+  @Column({
+    type: DataType.STRING,
+    allowNull: true
+  })
+  name!: string;
+
   @Unique
   @Column({
     type: DataType.STRING,
     allowNull: false,
+    validate: {
+      isEmail: true,
+    },
   })
-  username!: string
+  email!: string
 
   @Column({
     type: DataType.STRING,

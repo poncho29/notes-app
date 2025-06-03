@@ -5,7 +5,6 @@ import { User } from '../models/user.model'
 import { Note } from '../models/note.model'
 
 const DATABASE_URL = process.env.DATABASE_URL || ''
-console.log(`Database URL ${DATABASE_URL}`)
 
 export const sequelize = new Sequelize(DATABASE_URL, {
   dialect: 'postgres',
