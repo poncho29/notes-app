@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+apps/*/node_modules/
+
+# Build outputs
+dist/
+apps/*/dist/
+apps/*/dist-ssr/
+apps/*/build/
+
+# Environment files
+.env
+apps/*/.env
+*.local
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Cache
+.pnpm-store/
+apps/*/.turbo/
+apps/*/.vite/
+apps/*/.next/
+apps/*/.cache/
+apps/*/.eslintcache
+apps/*/.tsbuildinfo
+
+# Editor & OS files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
