@@ -3,7 +3,7 @@ import { checkSchema, validationResult } from 'express-validator';
 
 import { loginSchema, registerSchema } from '../schemas';
 
-import { login, register } from '../controllers';
+import { login, register, getUser } from '../controllers';
 
 const router = Router();
 
