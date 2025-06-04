@@ -8,11 +8,6 @@ apps/*/dist/
 apps/*/dist-ssr/
 apps/*/build/
 
-# Environment files
-.env.*
-apps/*/.env
-*.local
-
 # Logs
 *.log
 logs/
