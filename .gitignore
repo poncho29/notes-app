@@ -9,7 +9,7 @@ apps/*/dist-ssr/
 apps/*/build/
 
 # Environment files
-.env
+.env.*
 apps/*/.env
 *.local
 

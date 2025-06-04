@@ -19,11 +19,17 @@ Este proyecto es un monorepo que contiene tanto el frontend como el backend de l
 2. Instalar dependencias compartidas, en la raiz de proyecto ejecutar `pnpm i`
 3. Instalar dependencias del backend, ir a `/apps/backend` y ejecutar `pnpm i`
 4. Instalar dependencias del frontend, ir a `/apps/frontend` y ejecutar `pnpm i`
-5. Agregar los archivo `.env` adjuntos en el correo en la raiz de cada carpeta de `fronted y backend` respectivamente.
-5. Iniciar docker o abrir docker desktop
-6. Levantar la base de datos en un contenedor local, ir a `/apps/backend` y ejecutar `docker-compose up -d`
-7. Levantar el backend, ir a `/apps/backend` y ejecutar `pnpm dev`
-8. Lenvatar el fronted, ir a `/apps/frontend` y ejecutar `pnpm dev`
+5. Agregar los archivo `.env y .env.docker` del backend adjuntos en el correo en la carpeta de `apps/backend`
+6. Agregar el archivo `.env` del frontend adjunto en el correo en la carpeta de `apps/frontend`
+7. Levantar la base de datos en un contenedor local, ir a `/apps/backend` y ejecutar `docker-compose up -d database`
+8. Levantar el backend, ir a `/apps/backend` y ejecutar `pnpm dev`
+9. Lenvatar el fronted, ir a `/apps/frontend` y ejecutar `pnpm dev`
+
+### Construir image del backend
+
+1. Tener levantado el contenedor de la base de datos ir a `/apps/backend` y ejecutar `docker-compose up -d database`
+2. ir a la raiz del proyecto `/` y ejecutar `pnpm run docker:build:backend` para construir la imagen
+3. luego ejecutar `pnpm run docker:run:backend` para levantar el contenedor
 
 ---
 

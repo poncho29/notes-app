@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:build:backend": "docker build -t backend-app -f apps/backend/Dockerfile .",
+    "docker:run:backend": "docker run -d -p 4000:4000 --name winsport-backend-container --env-file apps/backend/.env.docker backend-app"
   },
   "keywords": [],
   "author": "",

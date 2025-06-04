@@ -12,6 +12,32 @@ services:
       - "${DB_PORT}:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    container_name: notes_backend_app
+    restart: always
+    ports:
+      - "4000:4000"
+    environment:
+      DB_HOST: database
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_PORT: 3306
+    env_file:
+      - ./apps/backend/.env.docker
+    depends_on:
+      - database
+    networks:
+      - app-network
 
 volumes:
   mysql_data:
+
+networks:
+  app-network:
