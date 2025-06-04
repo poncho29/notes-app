@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react"
 
-import { useLocation, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 import { AuthContext } from "./AuthContext"
 
@@ -13,7 +13,6 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const location = useLocation()
   const navigate = useNavigate()
 
   const [user, setUser] = useState<User | null>(null)
@@ -21,20 +20,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(!!token)
 
   useEffect(() => {
-    const currentPath = location.pathname
-    const isPublicRoute = ["/login", "/register"].includes(currentPath)
-
-    if (isPublicRoute && isAuthenticated) {
-      navigate("/dashboard")
-      return
-    }
-
-    if (!token) {
-      logout()
-      return
-    }
-
-    if (token && !user && !isPublicRoute) {
+    if (token && !user) {
       fetchUser()
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -89,6 +75,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     setToken(null)
     setUser(null)
     setIsAuthenticated(false)
+    navigate("/login")
   }
 
   const value = {

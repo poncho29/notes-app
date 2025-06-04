@@ -7,7 +7,7 @@ export const login = async (body: { email: string; password: string }): Promise<
     const response = await api.post("/auth/login", body)
     return response.data
   } catch (error) {
-    console.error("Error loging user:", error)
+    console.error("Error login user:", error)
     return null
   }
 }
