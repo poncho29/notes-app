@@ -15,7 +15,7 @@ Este proyecto es un monorepo que contiene tanto el frontend como el backend de l
 
 ## 🚀 Ejecución de proyectos
 
-1. Clonar el repositorio desde
+1. Clonar el repositorio y verificar la version de Docker
 2. Instalar dependencias compartidas, en la raiz de proyecto ejecutar `pnpm i`
 3. Instalar dependencias del backend, ir a `/apps/backend` y ejecutar `pnpm i`
 4. Instalar dependencias del frontend, ir a `/apps/frontend` y ejecutar `pnpm i`
